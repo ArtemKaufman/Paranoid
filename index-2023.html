@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paranoid web extension</title>
+    <meta
+      name="description"
+      content="Усиление безопасности браузера против мошеннических сайтов"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <header class="fixed w-full top-0 shadow-default bg-white">
+      <div class="flex justify-between items-center w-[92%] mx-auto container">
+        <a href="/" class="flex-1 lg:flex-none">
+          <img src="./img/2023-design/paranoid-logo.svg" />
+        </a>
+        <!-- menu -->
+        <div class="nav__wrapper py-6 flex justify-between items-center">
+          <!-- Burger icon -->
+          <button
+            class="navbar-burger space-y-2 block lg:hidden hover:cursor-pointer"
+          >
+            <span class="material-symbols-rounded">menu</span>
+          </button>
+          <!-- menu -->
+          <div
+            class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full justify-end items-center px-5 hidden lg:flex"
+          >
+            <ul class="flex gap-4 lg:gap-8 font-bold list-none text-center">
+              <li>
+                <a
+                  class="hover:text-gray-500 hover:cursor-pointer hover:no-underline"
+                  href="#"
+                  >How it works</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-gray-500 hover:cursor-pointer hover:no-underline"
+                  href="#"
+                  >Scams Database</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-gray-500 hover:cursor-pointer hover:no-underline"
+                  href="#"
+                  >Check Website Is Legit</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-gray-500 hover:cursor-pointer hover:no-underline"
+                  href="#"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- button -->
+          <div class="flex items-center gap-6">
+            <div class="nav__item nav__item--dropdown mx-4">
+              <!-- Dropdown button -->
+              <button
+                data-dropdown-toggle="dropdownExtensions"
+                class="hidden lg:block bg-transparent hover:bg-blue-500 text-black-700 font-semibold hover:text-white hover:no-underline py-2 px-6 border border-blue-500 hover:border-transparent rounded-lg"
+                type="button"
+              >
+                Download extension
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownExtensions"
+                class="z-10 dropdown hidden rounded-md bg-white space-y-2 w-full"
+              >
+                <ul
+                  class="py-2 text-black font-bold list-none"
+                  aria-labelledby="dropdownExtensions"
+                >
+                  <li class="m-0 py-2 hover:bg-gray-100">
+                    <a
+                      href="#"
+                      class="flex items-center px-4 hover:bg-gray-100 hover:no-underline"
+                    >
+                      <img
+                        class="w-6 h-6 mr-2 rounded-full"
+                        src="./img/2023-design/browsers-icons/safari.png"
+                        alt="Safari"
+                      />
+                      Safari
+                    </a>
+                  </li>
+                  <li class="m-0 py-2 hover:bg-gray-100">
+                    <a
+                      href="#"
+                      class="flex items-center px-4 hover:bg-gray-100 hover:no-underline"
+                    >
+                      <img
+                        class="w-6 h-6 mr-2 rounded-full"
+                        src="./img/2023-design/browsers-icons/opera.png"
+                        alt="Opera"
+                      />
+                      Opera
+                    </a>
+                  </li>
+                  <li class="m-0 py-2 hover:bg-gray-100">
+                    <a
+                      href="#"
+                      class="flex items-center px-4 hover:bg-gray-100 hover:no-underline"
+                    >
+                      <img
+                        class="w-6 h-6 mr-2 rounded-full"
+                        src="./img/2023-design/browsers-icons/microsoft-edge .png"
+                        alt="Edge"
+                      />
+                      Edge
+                    </a>
+                  </li>
+                  <li class="m-0 py-2 hover:bg-gray-100">
+                    <a
+                      href="#"
+                      class="flex items-center px-4 hover:bg-gray-100 hover:no-underline"
+                    >
+                      <img
+                        class="w-6 h-6 mr-2 rounded-full"
+                        src="./img/2023-design/browsers-icons/firefox.png"
+                        alt="firefox"
+                      />
+                      Mozilla
+                    </a>
+                  </li>
+                  <li class="m-0 py-2 hover:bg-gray-100">
+                    <a
+                      href="#"
+                      class="flex items-center px-4 hover:bg-gray-100 hover:no-underline"
+                    >
+                      <img
+                        class="w-6 h-6 mr-2 rounded-full"
+                        src="./img/2023-design/browsers-icons/chrome.png"
+                        alt="chrome"
+                      />
+                      Chrome
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="nav__item--dropdown hidden xl:flex">
+              <button
+                data-dropdown-toggle="dropdownLang"
+                data-dropdown-placement="bottom"
+                class="focus:outline-none font-medium text-sm px-4 py-2.5 text-center inline-flex"
+                type="button"
+              >
+                EN <span class="material-symbols-rounded">expand_more</span>
+              </button>
+              <div
+                id="dropdownLang"
+                class="z-10 dropdown hidden rounded-md bg-white"
+              >
+                <ul
+                  class="py-2 text-black font-bold list-none"
+                  aria-labelledby="dropdownLang"
+                >
+                  <li class="m-0">
+                    <a
+                      href="#ru"
+                      class="block px-4 py-2 hover:no-underline hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Русский</a
+                    >
+                  </li>
+                  <li class="m-0">
+                    <a
+                      href="#en"
+                      class="block px-4 py-2 hover:no-underline hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >English</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Burger Meu -->
+          <div class="navbar-menu relative z-50 hidden">
+            <div
+              class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
+            ></div>
+
+            <nav
+              class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+            >
+              <div class="flex items-center mb-8">
+                <a class="mr-auto text-3xl font-bold leading-none" href="#">
+                  <img src="./img/2023-design/paranoid-logo.svg" alt="" />
+                </a>
+                <button class="navbar-close">
+                  <img
+                    class="w-4 h-4"
+                    src="./img/2023-design/closeButton.png"
+                    alt=""
+                  />
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-32">
+      <section class="hero-section mb-10">
+        <div class="container">
+          <!-- Red notification -->
+          <div
+            id="notification"
+            class="flex items-center justify-between p-3 text-base font-bold text-gray-900 rounded-lg bg-red-test-light group"
+          >
+            <div class="flex items-center flex-grow justify-center gap-1">
+              <span class="material-symbols-rounded text-red-test"
+                >warning</span
+              >
+              <span class="text-main text-black ml-3 hover:no-underline"
+                >Мы не обнаружили у вас плагина, затища не работает</span
+              >
+            </div>
+            <span class="material-symbols-rounded">close</span>
+          </div>
+          <!-- Red notification -->
+
+          <div class="flex flex-1 flex-col lg:flex-row pt-5">
+            <div class="lg:w-1/3 mt-6 lg:mt-20">
+              <h1 class="text-hero mb-5">
+                Lorem ipsum dolor sit amet consectetur
+              </h1>
+
+              <p class="font-semibold text-gray-base text-h5 mb-6 lg:mb-10">
+                The most advanced tool to block dangerous sites,including fake
+                shops, phishing, and scam sites.
+              </p>
+
+              <a
+                href="#"
+                class="inline-flex bg-blue-500 hover:bg-transparent text-sm font-medium text-white hover:text-blue-500 hover:no-underline py-4 px-9 border border-blue-500 hover:border-blue-500 rounded-xl mb-10"
+              >
+                <strong>Install Extension</strong> (It's free)
+              </a>
+
+              <div class="browsers-list">
+                <div class="">
+                  <ul
+                    class="flex list-none flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400"
+                    id="myTab"
+                    data-tabs-toggle="#myTabContent"
+                    role="tablist"
+                  >
+                    <li class="m-0">
+                      <span
+                        class="inline-flex px-4 pb-1 border-b-2 border-transparent rounded-t-lg cursor-pointer hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group"
+                        id="profile-tab"
+                        data-tabs-target="#profile"
+                        type="button"
+                        role="tab"
+                        aria-controls="profile"
+                        aria-selected="false"
+                      >
+                        <span class="material-symbols-rounded mr-1"
+                          >desktop_windows</span
+                        >
+                        DESKTOP
+                      </span>
+                    </li>
+                    <li class="m-0">
+                      <span
+                        class="inline-flex px-4 pb-1 text-blue-600 border-b-2 border-blue-600 rounded-t-lg cursor-pointer active dark:text-blue-500 dark:border-blue-500 group"
+                        aria-current="page"
+                        id="dashboard-tab"
+                        data-tabs-target="#dashboard"
+                        type="button"
+                        role="tab"
+                        aria-controls="dashboard"
+                        aria-selected="false"
+                      >
+                        <span class="material-symbols-rounded mr-1"
+                          >phone_iphone</span
+                        >
+                        MOBILE
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div id="myTabContent">
+                  <div
+                    class="hidden pt-2"
+                    id="profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                  >
+                    <ul class="list-none flex gap-7">
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/safari.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/opera.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/microsoft-edge.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/firefox.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/chrome.png"
+                            alt=""
+                        /></a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div
+                    class="hidden pt-2"
+                    id="dashboard"
+                    role="tabpanel"
+                    aria-labelledby="dashboard-tab"
+                  >
+                    <ul class="list-none flex gap-7">
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/safari.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/opera.png"
+                            alt=""
+                        /></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:w-1/3"></div>
+
+            <div
+              class="lg:w-1/3 mt-5 lg:mt-18 flex flex-col gap-4 w-full relative"
+              id="heroSectionAlerts"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <div class="container">
+          <!--Section 2 how it works-->
+          <div class="rounded-2xl">
+            <img
+              class="w-full h-auto"
+              src="./img/2023-design/section2-banner.png"
+              alt="banner section 2"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--Section how it works-->
+      <section class="mb-10">
+        <div class="container">
+          <div class="lg:flex items-center">
+            <div class="lg:w-1/2 lg:block">
+              <img
+                class="w-full h-auto"
+                src="./img/2023-design/UDC1.gif"
+                alt="image section 2"
+              />
+            </div>
+
+            <div class="w-full lg:w-1/2 flex flex-col">
+              <h1 class="text-h1">How it works?</h1>
+              <p class="font-bold text-gray-base text-main">
+                When a user opens an unknown link, the extension sends the site
+                URL, site icon, and page title to the API of Paranoid Web
+                Extension.
+              </p>
+              <p class="text-gray-base text-main">
+                Data is processed in less than a second, the user will not have
+                time to make a mistake. When a threat is detected, an extension
+                blocks the page with a warning about the danger and advice to
+                do.
+              </p>
+              <p class="text-gray-base text-main">
+                Paranoid Web Extension may block a site made a couple of days
+                ago and already requesting a credit card from you. In case of a
+                false positive, you can click the "This is an error" button.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Section 3 why do you need this-->
+      <section class="bg-blue-gray mb-10">
+        <div class="container">
+          <div class="lg:flex">
+            <div class="w-3/4 mx-auto lg:w-1/3">
+              <aside class="aside-lines-bg lg:py-20 lg:px-10 lg:mt-10">
+                <h1 class="text-h1">Why do you need this?</h1>
+                <p class="text-main mb-8">
+                  Lorem ipsum dolor sit amet consectetur. Est ac interdum nunc
+                  neque amet arcu aliquam tristique. Tellus id eu dui commodo
+                  mollis viverra suspendisse faucibus suscipit.
+                </p>
+                <div class="">
+                  <div class="mb-6">
+                    <h1 class="text-primary text-hero mb-0">1500</h1>
+                    <span class="text-xs font-semibold">SCAMS EVERY DAY</span>
+                  </div>
+                  <div class="mb-6">
+                    <h1 class="text-primary text-hero mb-0">5M</h1>
+                    <span class="text-xs font-semibold">RUBED EVERY DAY</span>
+                  </div>
+                  <div class="mb-6">
+                    <h1 class="text-primary text-hero mb-0">150k</h1>
+                    <span class="text-xs font-semibold">RUBED EVERY DAY</span>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            <div class="w-3/4 mx-auto lg:w-1/3 p-4 hidden lg:block ">
+              <div class="rounded-2xl mb-4 overflow-hidden">
+                <img
+                  class="w-full h-auto"
+                  src="./img/2023-design/section-3-1.png"
+                  alt="slide 1"
+                />
+              </div>
+
+              <div class="rounded-2xl mb-4 overflow-hidden">
+                <img
+                  class="w-full h-auto"
+                  src="./img/2023-design/section-3-1.png"
+                  alt="slide 1"
+                />
+              </div>
+            </div>
+
+            <div class="w-3/4 mx-auto lg:w-1/3 p-4 lg:mt-40 hidden lg:block">
+              <div class="rounded-2xl mb-4 overflow-hidden">
+                <img
+                  class="w-full h-auto"
+                  src="./img/2023-design/section-3-1.png"
+                  alt="slide 1"
+                />
+              </div>
+
+              <div class="rounded-2xl mb-4 overflow-hidden">
+                <img
+                  class="w-full h-auto"
+                  src="./img/2023-design/section-3-1.png"
+                  alt="slide 1"
+                />
+              </div>
+            </div>
+
+            <!-- слайди для слайдера -->
+          <div class="swiper swiperWhyNeedThis block lg:hidden">
+            <div class="swiper-wrapper" style="min-width: 0; min-height: 0;">
+
+
+              <div class="swiper-slide rounded-2xl mb-4 overflow-hidden w-full px-5">
+                <img class="w-full h-auto" src="./img/2023-design/section-3-1.png" alt="slide 1">
+              </div>
+
+              <div class="swiper-slide rounded-2xl mb-4 overflow-hidden w-full px-5">
+                <img class="w-full h-auto" src="./img/2023-design/section-3-1.png" alt="slide 1">
+              </div>
+
+              <div class="swiper-slide rounded-2xl mb-4 overflow-hidden w-full px-5">
+                <img class="w-full h-auto" src="./img/2023-design/section-3-1.png" alt="slide 1">
+              </div>
+
+              <div class="swiper-slide rounded-2xl mb-4 overflow-hidden w-full px-5">
+                <img class="w-full h-auto" src="./img/2023-design/section-3-1.png" alt="slide 1">
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA-->
+      <section class="cta-section my-20">
+        <div class="container">
+          <div class="lg:flex">
+            <div
+              class="w-3/4 mx-auto lg:w-1/3 flex flex-col items-end justify-around pr-10"
+            >
+              <div
+                class="relative bg-white shadow-tile flex gap-4 p-6 font-semibold rounded-md max-w-max mt-10"
+              >
+                <div class="absolute -top-5 -left-5 w-10">
+                  <img
+                    src="./img/2023-design/browsers-icons/chrome.png"
+                    alt=""
+                  />
+                </div>
+
+                <span class="material-symbols-rounded text-5xl text-orange"
+                  >help</span
+                >
+                <div>
+                  <p class="m-0 text-yellow-300 text-xs uppercase">
+                    SUSPICIOUS site blocked
+                  </p>
+                  <p class="m-0 text-lg">Tried to steal your personal data</p>
+                </div>
+              </div>
+
+              <div
+                class="relative bg-white shadow-tile flex gap-4 p-6 font-semibold rounded-md max-w-max"
+              >
+                <div class="absolute -top-5 -left-5 w-10">
+                  <img
+                    src="./img/2023-design/browsers-icons/safari.png"
+                    alt=""
+                  />
+                </div>
+                <span class="material-symbols-rounded text-5xl text-green-valid"
+                  >check_box</span
+                >
+                <div>
+                  <p class="m-0 text-green-500 text-xs uppercase">
+                    site is safe
+                  </p>
+                  <p class="m-0 text-lg">Lorem Ipsum</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-3/4 mx-auto lg:w-1/3 text-center">
+              <h2 class="text-h1">Lorem ipsum dolor amet consectetur</h2>
+              <p class="text-main mb-8">
+                Lorem ipsum dolor sit amet consectetur. Habitant enim ultricies
+                mauris nec mattis in libero gravida congue. Blandit mattis risus
+                fusce consequat.
+              </p>
+              <a
+                href="#"
+                class="inline-flex bg-blue-500 hover:bg-transparent text-sm font-medium text-white hover:text-blue-500 hover:no-underline py-4 px-9 border border-blue-500 hover:border-blue-500 rounded-xl mb-10"
+              >
+                <strong>Install Extension</strong> (It's free)
+              </a>
+
+              <div class="flex items-center flex-col">
+                <ul
+                  class="flex list-none flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400"
+                  id="myTab2"
+                  data-tabs-toggle="#myTabContent2"
+                  role="tablist"
+                >
+                  <li class="m-0">
+                    <span
+                      class="inline-flex px-4 pb-1 border-b-2 border-transparent rounded-t-lg cursor-pointer hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group"
+                      id="profile-tab2"
+                      data-tabs-target="#profile2"
+                      type="button"
+                      role="tab"
+                      aria-controls="profile"
+                      aria-selected="false"
+                    >
+                      <span class="material-symbols-rounded mr-1"
+                        >desktop_windows</span
+                      >
+                      DESKTOP
+                    </span>
+                  </li>
+                  <li class="m-0">
+                    <span
+                      class="inline-flex px-4 pb-1 text-blue-600 border-b-2 border-blue-600 rounded-t-lg cursor-pointer active dark:text-blue-500 dark:border-blue-500 group"
+                      aria-current="page"
+                      id="dashboard-tab2"
+                      data-tabs-target="#dashboard2"
+                      type="button"
+                      role="tab"
+                      aria-controls="dashboard2"
+                      aria-selected="false"
+                    >
+                      <span class="material-symbols-rounded mr-1"
+                        >phone_iphone</span
+                      >
+                      MOBILE
+                    </span>
+                  </li>
+                </ul>
+
+                <div id="myTabContent2">
+                  <div
+                    class="hidden pt-2"
+                    id="profile2"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab2"
+                  >
+                    <ul class="list-none flex gap-7">
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/safari.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/opera.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/microsoft-edge.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/firefox.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/chrome.png"
+                            alt=""
+                        /></a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div
+                    class="hidden pt-2"
+                    id="dashboard2"
+                    role="tabpanel"
+                    aria-labelledby="dashboard-tab2"
+                  >
+                    <ul class="list-none flex gap-7">
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/safari.png"
+                            alt=""
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="#" class="block w-10"
+                          ><img
+                            src="./img/2023-design/browsers-icons/opera.png"
+                            alt=""
+                        /></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="w-3/4 mx-auto lg:w-1/3 flex flex-col items-end justify-around pr-10"
+            >
+              <div class="w-10 self-start ml-20">
+                <img
+                  src="./img/2023-design/browsers-icons/microsoft-edge.png"
+                  alt=""
+                />
+              </div>
+
+              <div
+                class="relative bg-white shadow-tile flex gap-4 p-6 font-semibold rounded-md max-w-max"
+              >
+                <div class="absolute -top-5 -left-5 w-10">
+                  <img
+                    src="./img/2023-design/browsers-icons/firefox.png"
+                    alt=""
+                  />
+                </div>
+                <span class="material-symbols-rounded text-5xl text-red-test"
+                  >warning</span
+                >
+                <div>
+                  <p class="m-0 text-red-400 text-xs uppercase">
+                    Dangerous site blocked
+                  </p>
+                  <p class="m-0 text-lg">Fake bank website</p>
+                </div>
+              </div>
+
+              <div class="w-10 self-start ml-5">
+                <img src="./img/2023-design/browsers-icons/opera.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--    What we are blocking-->
+      <section>
+        <div class="container">
+          <h1 class="text-h1 text-center mb-16">What we are blocking</h1>
+
+          <div class="swiper swiperBlocking w-[100vw]">
+            <!-- Carousel wrapper -->
+            <div
+              class="swiper-wrapper flex mb-3"
+              style="min-width: 0; min-height: 0"
+            >
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-white shadow-tile p-6 mx-3 rounded-md max-w-max">
+                  <div class="rounded-lg w-max max-h-max bg-orange">
+                    <p
+                      class="font-semibold text-sm uppercase text-white py-1.5 px-4"
+                    >
+                      little knew website
+                    </p>
+                  </div>
+                  <h5 class="text-h5">www.todosdescuentos.com</h5>
+                  <p class="text-main mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                    nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                    varius bibendum sit tortor. In platea at egestas erat
+                    porttitor
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-white shadow-tile p-6 mx-3 rounded-md max-w-max">
+                  <div class="relative rounded-md overflow-hidden mb-6">
+                    <span
+                      class="absolute top-6 left-6 rounded-lg bg-red-test font-semibold text-sm uppercase text-white py-1.5 px-4"
+                      >suspicious website</span
+                    >
+                    <img src="./img/2023-design/placeholder.png" alt="image" />
+                  </div>
+                  <h5 class="text-h5">www.todosdescuentos.com</h5>
+                  <p class="text-main mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                    nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                    varius bibendum sit tortor. In platea at egestas erat
+                    porttitor
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-white shadow-tile p-6 mx-3 rounded-md max-w-max">
+                  <div class="rounded-lg w-max max-h-max bg-orange">
+                    <p
+                      class="font-semibold text-sm uppercase text-white py-1.5 px-4"
+                    >
+                      little knew website
+                    </p>
+                  </div>
+                  <h5 class="text-h5">www.todosdescuentos.com</h5>
+                  <p class="text-main mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                    nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                    varius bibendum sit tortor. In platea at egestas erat
+                    porttitor
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-white shadow-tile p-6 mx-3 rounded-md max-w-max">
+                  <div class="rounded-lg w-max max-h-max bg-orange">
+                    <p
+                      class="font-semibold text-sm uppercase text-white py-1.5 px-4"
+                    >
+                      little knew website
+                    </p>
+                  </div>
+                  <h5 class="text-h5">www.todosdescuentos.com</h5>
+                  <p class="text-main mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                    nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                    varius bibendum sit tortor. In platea at egestas erat
+                    porttitor
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-white shadow-tile p-6 mx-3 rounded-md max-w-max">
+                  <div class="rounded-lg w-max max-h-max bg-orange">
+                    <p
+                      class="font-semibold text-sm uppercase text-white py-1.5 px-4"
+                    >
+                      little knew website
+                    </p>
+                  </div>
+                  <h5 class="text-h5">www.todosdescuentos.com</h5>
+                  <p class="text-main mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                    nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                    varius bibendum sit tortor. In platea at egestas erat
+                    porttitor
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 6 меньше нельзя, сломается бесконечность слайдера -->
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-white shadow-tile p-6 mx-3 rounded-md max-w-max">
+                  <div class="rounded-lg w-max max-h-max bg-orange">
+                    <p
+                      class="font-semibold text-sm uppercase text-white py-1.5 px-4"
+                    >
+                      little knew website
+                    </p>
+                  </div>
+                  <h5 class="text-h5">www.todosdescuentos.com</h5>
+                  <p class="text-main mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                    nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                    varius bibendum sit tortor. In platea at egestas erat
+                    porttitor
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center items-center pt-4">
+              <button
+                type="button"
+                class="btn-prev rounded-xl border border-smoked p-4 flex justify-center items-center mr-4 h-full cursor-pointer group focus:outline-none"
+                data-carousel-prev
+              >
+                <span class="material-symbols-rounded">chevron_left</span>
+                <span class="sr-only">Previous</span>
+              </button>
+              <button
+                type="button"
+                class="btn-next rounded-xl border border-smoked p-4 flex justify-center items-center h-full cursor-pointer group focus:outline-none"
+                data-carousel-next
+              >
+                <span class="material-symbols-rounded">chevron_right</span>
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  About Us  -->
+      <section>
+        <div class="container">
+          <div class="lg:flex items-center py-20">
+            <div class="lg:w-1/2">
+              <img
+                src="./img/2023-design/about_us.png"
+                class="w-full"
+                alt="about us"
+              />
+            </div>
+
+            <div class="lg:w-1/2">
+              <div class="lg:pl-20">
+                <h2 class="text-h1 mb-5">About Us</h2>
+                <p class="text-main">
+                  Lorem ipsum dolor sit amet consectetur. Malesuada ultricies
+                  nisl tincidunt felis duis auctor ipsum nunc id. Sit eget
+                  varius bibendum sit tortor. In platea at egestas erat
+                  porttitor euismod. Sagittis sed justo in tempus enim velit.
+                  Ornare neque tempor pulvinar adipiscing egestas bibendum
+                  consectetur. Vel ipsum enim ut aliquet. Tristique libero
+                  porttitor phasellus eleifend vel rhoncus condimentum
+                  fermentum. Proin turpis magna ipsum volutpat ac.
+                </p>
+                <p class="text-main">
+                  Volutpat in nunc et sapien mattis. Potenti dignissim porta
+                  euismod porta et elit mattis vel. Sit a neque pulvinar dui
+                  porta velit faucibus cras sodales. Nibh ultrices pretium
+                  commodo sed luctus consectetur sit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <div class="container">
+          <h2 class="text-h1 text-center mb-16">Last checks</h2>
+          <!-- ------------------------------------------- -->
+          <div class="swiper swiperLastChecks max-h-max w-[100vw]">
+            <!-- Additional required wrapper -->
+            <div
+              class="swiper-wrapper flex flex-col sm:flex-row text-center w-max max-h-80 min-w-0 min-h-0"
+            >
+              <!-- Slides -->
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-green-valid font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    Old website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.moneynelintxxsxxxx.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-red-test font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    suspicious website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.todosdescuentos.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-orange font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    little knew website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.crimsonxdesign.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-green-valid font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    Old website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.moneynelint.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-red-test font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    suspicious website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.todosdescuentos.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-orange font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    little knew website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.crimsonxdesign.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-green-valid font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    Old website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.moneynelint.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-red-test font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    suspicious website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.todosdescuentos.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide h-auto w-auto">
+                <div class="bg-blue-gray p-6 mx-3 rounded-xl">
+                  <div
+                    class="rounded-lg w-max max-h-max bg-orange font-semibold text-sm uppercase text-white py-1.5 px-4 mb-4"
+                  >
+                    little knew website
+                  </div>
+                  <a href="#" class="font-semibold break-words"
+                    >www.crimsonxdesign.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Posts  -->
+      <section class="mb-20">
+        <div class="container">
+          <h2 class="text-center text-5xl font-semibold mb-6 lg:mb-10">
+            Last posts
+          </h2>
+          <div class="post-list flex gap-8 flex-col lg:flex-row">
+            <div class="post w-full lg:w-1/3 mb-4">
+              <img
+                class="max-w-full h-auto mb-5"
+                src="./img/2023-design/lastPost 1.png"
+                alt="postImage"
+              />
+              <h5 class="text-h5 font-semibold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, exercitationem
+              </h5>
+              <p class="text-main">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia ad tenetur dolore minus placeat autem possimus dolores
+                doloremque, qui nam repudiandae quaerat voluptatum sapiente!
+                Molestias quo corrupti repudiandae facere eius.
+              </p>
+              <p class="text-main">25-05-2023</p>
+            </div>
+
+            <div class="post w-full lg:w-1/3 mb-4">
+              <img
+                class="max-w-full h-auto mb-5"
+                src="./img/2023-design/lastPost 2.png"
+                alt="postImage"
+              />
+              <h5 class="text-h5 font-semibold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, exercitationem
+              </h5>
+              <p class="text-main">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia ad tenetur dolore minus placeat autem possimus dolores
+                doloremque, qui nam repudiandae quaerat voluptatum sapiente!
+                Molestias quo corrupti repudiandae facere eius.
+              </p>
+              <p class="text-main">25-05-2023</p>
+            </div>
+
+            <div class="post w-full lg:w-1/3 mb-4">
+              <img
+                class="max-w-full h-auto mb-5"
+                src="./img/2023-design/lastPost 3.png"
+                alt="postImage"
+              />
+              <h5 class="text-h5 font-semibold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit, exercitationem
+              </h5>
+              <p class="text-main">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia ad tenetur dolore minus placeat autem possimus dolores
+                doloremque, qui nam repudiandae quaerat voluptatum sapiente!
+                Molestias quo corrupti repudiandae facere eius.
+              </p>
+              <p class="text-main">25-05-2023</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-blue-gray pt-20 pb-10">
+      <div class="container mx-auto px-4 text-center">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="mb-10">
+            <img src="./img/2023-design/paranoid-logo.svg" />
+          </div>
+
+          <div class="col-span-2">
+            <div class="items grid grid-cols-2 lg:grid-cols-4">
+              <div class="item">
+                <div class="title font-semibold text-xl">Menu title</div>
+                <ul class="list-none">
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <div class="title font-semibold text-xl">Menu title</div>
+                <ul class="list-none">
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <div class="title font-semibold text-xl">Menu title</div>
+                <ul class="list-none">
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <div class="title font-semibold text-xl">Menu title</div>
+                <ul class="list-none">
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                  <li>Menu item</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="terms-privacy flex justify-between text-black mt-11">
+          <div class="flex items-center gap-8 text-sm">
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy policy</a>
+          </div>
+          <div class="icons flex gap-7 items-center">
+            <a href="#">
+              <img src="./img/2023-design/linkedin.svg" alt="linkedin" />
+            </a>
+            <a href="#">
+              <img
+                class="fill-grey-400"
+                src="./img/2023-design/facebook.svg"
+                alt="facebook"
+              />
+            </a>
+            <a href="#">
+              <img
+                class="fill-grey-400"
+                src="./img/2023-design/twitter.svg"
+                alt="twitter"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      //Open burger menu
+      const burger = document.querySelectorAll('.navbar-burger');
+      const menu = document.querySelectorAll('.navbar-menu');
+
+      if (burger.length && menu.length) {
+        for (let i = 0; i < burger.length; i++) {
+          burger[i].addEventListener('click', function () {
+            for (let j = 0; j < menu.length; j++) {
+              menu[j].classList.toggle('hidden');
+            }
+          });
+        }
+      }
+
+      // close
+      const close = document.querySelectorAll('.navbar-close');
+      const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+      if (close.length) {
+        for (let i = 0; i < close.length; i++) {
+          close[i].addEventListener('click', function () {
+            for (let j = 0; j < menu.length; j++) {
+              menu[j].classList.toggle('hidden');
+            }
+          });
+        }
+      }
+
+      if (backdrop.length) {
+        for (let i = 0; i < backdrop.length; i++) {
+          backdrop[i].addEventListener('click', function () {
+            for (let j = 0; j < menu.length; j++) {
+              menu[j].classList.toggle('hidden');
+            }
+          });
+        }
+      }
+      // ====================================
+
+      //Close red notification
+
+      const notificationField = document.getElementById('notification');
+      const closeNotification = document.getElementById('close-notification');
+
+      closeNotification.addEventListener('click', () => {
+        notificationField.classList.toggle('hidden');
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="js/swiperLastChecks.js"></script>
+    <script src="js/hero-section.js"></script>
+
+    <script>
+      const swiper = new Swiper('.swiperBlocking', {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.btn-next',
+          prevEl: '.btn-prev',
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 3,
+          },
+        }
+      });
+
+      const swiperWhyNeedThis = new Swiper('.swiperWhyNeedThis', {
+        direction: 'horizontal',
+        slidesPerView: 1,
+        loop: true,
+        // freeMode: true,
+        // watchoverflow: true,
+
+        navigation: {
+          nextEl: '.btn-next-slider',
+          prevEl: '.btn-prev-slider',
+        },
+      });
+    </script>
+  </body>
+</html>
